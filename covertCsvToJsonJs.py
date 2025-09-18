@@ -16,7 +16,7 @@ def generate_mongo_script(csv_file):
             mongo_entry = mongo_entry.rstrip(',') + ' }'
             mongo_data.append(mongo_entry)
 
-    script = f"let memberList = [\n  {',\n  '.join(mongo_data)}\n];"
+    script = f"[\n  {',\n  '.join(mongo_data)}\n];"
     return script
 
 def process_file(csv_path, output_folder):
@@ -59,3 +59,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
